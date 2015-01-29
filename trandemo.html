@@ -1,0 +1,52 @@
+<head>
+  <title>trandemo</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+</body>
+
+<template name="layout">
+
+<div>
+  <nav id="bt-menu" class="bt-menu">
+    <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+                 <ul>
+				   <li><a style="color:white;"  href="#" class="bt-icon icon-zoom">Zoom</a></li>
+				   <li><a href="#" class="bt-icon icon-refresh">Refresh</a></li>
+				   <li><a href="#" class="bt-icon icon-lock">Lock</a></li>
+				   <li><a href="#" class="bt-icon icon-speaker">Sound</a></li>
+				   <li><a href="#" class="bt-icon icon-star">Favorite</a></li>
+			     </ul>
+                 <ul>
+                    <li><a href="#" class="bt-icon icon-speaker">Sound</a></li>
+                    <li><a href="#" class="bt-icon icon-star">Favorite</a></li>
+                 </ul>
+                              
+  </nav>
+</div>
+
+{{> animation}}
+{{#transitioner}}
+  {{> yield}}
+{{/transitioner}}
+</template>
+
+<template name="animation">
+  <div id="move_block" class="move_block" style="width:100px;height:100px;background-color:yellow;"></div>
+  <a id="move_btn" class="move_btn" href="javascript:;">click</a>
+</template>
+
+<template name="pageone">
+<div><a href={{pathFor route='two'}}>I am page one!!</a></div>
+</template>
+
+<template name="pagetwo">
+<div><a href={{pathFor route='main'}}>I am page two!!</a></div>
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
